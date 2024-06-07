@@ -20,3 +20,17 @@ exports.getAttendance = async (req, res) => {
         res.status(500).json({ error: 'Server error'});
     }
 };
+
+exports.deleteAttendance = async (req, res) => {
+    const { id } = req.body;
+    try {
+      const attendance = await Attendance.findByIdAndDelete(id);
+      if (!attendance) {
+        return res.status(404).json({ error: 'Attendance record not found' });
+      }
+      res.json({ message: 'Attendance record deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
+    }
+  };
+  
