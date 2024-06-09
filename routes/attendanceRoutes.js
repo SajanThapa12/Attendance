@@ -5,5 +5,7 @@ const attendanceController = require('../Controllers/attendanceController');
 
 router.get('/', attendanceController.getAttendance);
 router.post('/mark', attendanceController.getAttendance);
+// router.get('/list', attendanceController.getAttendanceList);
+
 
 module.exports = router;

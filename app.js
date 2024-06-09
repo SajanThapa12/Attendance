@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/api/attendance', require('./routes/attendanceRoutes'));
 
 app.use(bodyParser.json()); 
-
+                            
 
 app.post ('/register', async(req, res) => {
      const{username, password} = req.body;
