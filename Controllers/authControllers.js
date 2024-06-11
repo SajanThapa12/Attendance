@@ -29,8 +29,8 @@ exports.login = async (req, res) => {
     //     return res.status(400).json({ error: 'Invalid credentials' });
     //   }
 
-    //   req.session.user = user;
-    //   res.status(200).json({ message: 'User logged in succesfully' });
+    req.session.user = user;
+    res.status(200).json({ message: "User logged in succesfully" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
